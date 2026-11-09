@@ -1,0 +1,652 @@
+[
+  {
+    "id": "dependency-001",
+    "name": "@changesets/changelog-github",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "xyflow",
+      "chakra-ui",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-002",
+    "name": "@commitlint/cli",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "chakra-ui"
+    ]
+  },
+  {
+    "id": "dependency-003",
+    "name": "@eslint/compat",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event",
+      "chakra-ui"
+    ]
+  },
+  {
+    "id": "dependency-004",
+    "name": "@eslint/eslintrc",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "chakra-ui"
+    ]
+  },
+  {
+    "id": "dependency-005",
+    "name": "@eslint/js",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "chakra-ui",
+      "fabric.js",
+      "insomnia",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-006",
+    "name": "@testing-library/dom",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event"
+    ]
+  },
+  {
+    "id": "dependency-007",
+    "name": "@vitest/coverage-v8",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "fabric.js",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-008",
+    "name": "eslint-config-prettier",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "chakra-ui",
+      "fabric.js",
+      "insomnia",
+      "shortest",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-009",
+    "name": "eslint-plugin-prettier",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "chakra-ui",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-010",
+    "name": "eslint-plugin-react-hooks",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "insomnia",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-011",
+    "name": "happy-dom",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "shortest",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-012",
+    "name": "husky",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "chakra-ui",
+      "cli",
+      "refly",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-013",
+    "name": "lint-staged",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "chakra-ui",
+      "cli",
+      "refly",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-014",
+    "name": "turbo",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "xyflow",
+      "n8n",
+      "refly"
+    ]
+  },
+  {
+    "id": "dependency-015",
+    "name": "concurrently",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "xyflow",
+      "hocuspocus"
+    ]
+  },
+  {
+    "id": "dependency-016",
+    "name": "nodemon",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "n8n",
+      "refly"
+    ]
+  },
+  {
+    "id": "dependency-017",
+    "name": "@testing-library/jest-dom",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event",
+      "chakra-ui",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-018",
+    "name": "@playwright/test",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "xyflow",
+      "fabric.js",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-019",
+    "name": "eslint-plugin-react",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "chakra-ui",
+      "insomnia",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-020",
+    "name": "globals",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "chakra-ui",
+      "insomnia",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-021",
+    "name": "@testing-library/react",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event",
+      "chakra-ui",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-022",
+    "name": "@biomejs/biome",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "hocuspocus",
+      "n8n",
+      "refly",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-023",
+    "name": "typescript-eslint",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "fabric.js",
+      "insomnia",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-024",
+    "name": "jest",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "cli",
+      "n8n"
+    ]
+  },
+  {
+    "id": "dependency-025",
+    "name": "nyc",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "fabric.js"
+    ]
+  },
+  {
+    "id": "dependency-026",
+    "name": "eslint-plugin-import",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "chakra-ui",
+      "cli",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-027",
+    "name": "eslint",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "user-event",
+      "xyflow",
+      "chakra-ui",
+      "cli",
+      "insomnia",
+      "n8n",
+      "shortest",
+      "type-challenges",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-028",
+    "name": "prettier",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "xyflow",
+      "chakra-ui",
+      "cli",
+      "fabric.js",
+      "insomnia",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-029",
+    "name": "npm-run-all2",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "n8n",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-030",
+    "name": "rimraf",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "xyflow",
+      "chakra-ui",
+      "n8n",
+      "refly",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-031",
+    "name": "jest-mock",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event",
+      "n8n"
+    ]
+  },
+  {
+    "id": "dependency-032",
+    "name": "supertest",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "nest",
+      "n8n"
+    ]
+  },
+  {
+    "id": "dependency-033",
+    "name": "vitest",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "chakra-ui",
+      "fabric.js",
+      "insomnia",
+      "refly",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-034",
+    "name": "execa",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "cli",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-035",
+    "name": "eslint-import-resolver-typescript",
+    "dependencyCategoryId": "build-scripts-ci-cd-configuration",
+    "projectIds": [
+      "user-event",
+      "cli"
+    ]
+  },
+  {
+    "id": "dependency-036",
+    "name": "lerna",
+    "dependencyCategoryId": "dependency-package-management",
+    "projectIds": [
+      "nest",
+      "cli",
+      "hocuspocus"
+    ]
+  },
+  {
+    "id": "dependency-037",
+    "name": "@changesets/cli",
+    "dependencyCategoryId": "dependency-package-management",
+    "projectIds": [
+      "LlamaIndexTS",
+      "xyflow",
+      "chakra-ui",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-038",
+    "name": "@babel/core",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "cli",
+      "fabric.js",
+      "hocuspocus",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-039",
+    "name": "@babel/preset-env",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "cli",
+      "fabric.js",
+      "hocuspocus",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-040",
+    "name": "@microsoft/api-extractor",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-041",
+    "name": "tslib",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "nest",
+      "fabric.js",
+      "insomnia",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-042",
+    "name": "@babel/preset-typescript",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "cli",
+      "fabric.js",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-043",
+    "name": "typescript",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "LlamaIndexTS",
+      "nest",
+      "user-event",
+      "xyflow",
+      "chakra-ui",
+      "cli",
+      "fabric.js",
+      "hocuspocus",
+      "insomnia",
+      "n8n",
+      "refly",
+      "shortest",
+      "shadcn-table",
+      "type-challenges",
+      "vue-i18n",
+      "xstate"
+    ]
+  },
+  {
+    "id": "dependency-044",
+    "name": "postcss",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-045",
+    "name": "tailwindcss",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-046",
+    "name": "next",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-047",
+    "name": "rollup",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "xyflow",
+      "chakra-ui",
+      "fabric.js",
+      "hocuspocus",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-048",
+    "name": "@rollup/plugin-commonjs",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "hocuspocus",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-049",
+    "name": "@rollup/plugin-typescript",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "fabric.js",
+      "hocuspocus"
+    ]
+  },
+  {
+    "id": "dependency-050",
+    "name": "@rollup/plugin-terser",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "fabric.js",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-051",
+    "name": "esbuild",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "user-event",
+      "insomnia"
+    ]
+  },
+  {
+    "id": "dependency-052",
+    "name": "@rollup/plugin-json",
+    "dependencyCategoryId": "compiler-build-target-configuration",
+    "projectIds": [
+      "fabric.js",
+      "hocuspocus",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-053",
+    "name": "@rollup/plugin-node-resolve",
+    "dependencyCategoryId": "external-tool-integration",
+    "projectIds": [
+      "chakra-ui",
+      "hocuspocus",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-054",
+    "name": "drizzle-orm",
+    "dependencyCategoryId": "external-tool-integration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-055",
+    "name": "postgres",
+    "dependencyCategoryId": "external-tool-integration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-056",
+    "name": "@octokit/rest",
+    "dependencyCategoryId": "external-tool-integration",
+    "projectIds": [
+      "chakra-ui",
+      "shortest"
+    ]
+  },
+  {
+    "id": "dependency-057",
+    "name": "cross-env",
+    "dependencyCategoryId": "platform-runtime-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "n8n",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-058",
+    "name": "ts-node",
+    "dependencyCategoryId": "platform-runtime-configuration",
+    "projectIds": [
+      "nest",
+      "user-event"
+    ]
+  },
+  {
+    "id": "dependency-059",
+    "name": "server-only",
+    "dependencyCategoryId": "platform-runtime-configuration",
+    "projectIds": [
+      "shortest",
+      "shadcn-table"
+    ]
+  },
+  {
+    "id": "dependency-060",
+    "name": "tsx",
+    "dependencyCategoryId": "platform-runtime-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "shortest",
+      "shadcn-table",
+      "vue-i18n"
+    ]
+  },
+  {
+    "id": "dependency-061",
+    "name": "dotenv",
+    "dependencyCategoryId": "platform-runtime-configuration",
+    "projectIds": [
+      "chakra-ui",
+      "refly",
+      "shortest"
+    ]
+  }
+]

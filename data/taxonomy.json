@@ -1,0 +1,265 @@
+{
+  "bugCategories": [
+    {
+      "id": "api-misuse",
+      "label": "API Misuse",
+      "definition": "Incorrect or incomplete use of an API from another module, package, or external integration.",
+      "rules": [
+        "Look for incorrect invocation, configuration, ordering, or assumptions about an API contract.",
+        "Prefer this category when the external API usage is the primary fault source."
+      ],
+      "neighbors": [
+        "logic-error",
+        "missing-cases",
+        "tooling-configuration-issue"
+      ],
+      "representativeRecordIds": [
+        "bug-000018",
+        "bug-000026",
+        "bug-000032",
+        "bug-000034",
+        "bug-000035",
+        "bug-000037"
+      ]
+    },
+    {
+      "id": "asynchrony-event-handling-bug",
+      "label": "Asynchrony / Event Handling Bug",
+      "definition": "Failures caused by asynchronous execution, event ordering, callbacks, promises, or event lifecycle management.",
+      "rules": [
+        "Identify timing, ordering, registration, or coordination failures.",
+        "Use when asynchronous/event behaviour is central rather than incidental."
+      ],
+      "neighbors": [
+        "exception-handling",
+        "logic-error",
+        "runtime-exception"
+      ],
+      "representativeRecordIds": [
+        "bug-000008",
+        "bug-000013",
+        "bug-000123",
+        "bug-000125",
+        "bug-000131",
+        "bug-000164"
+      ]
+    },
+    {
+      "id": "exception-handling",
+      "label": "Exception Handling",
+      "definition": "Defects caused by missing, incorrect, or incomplete handling of errors and exceptional conditions.",
+      "rules": [
+        "Look for changes to catch paths, validation, propagation, or recovery.",
+        "Distinguish from runtime exceptions that primarily describe an observed crash."
+      ],
+      "neighbors": [
+        "runtime-exception",
+        "asynchrony-event-handling-bug",
+        "missing-cases"
+      ],
+      "representativeRecordIds": [
+        "bug-000017",
+        "bug-000074",
+        "bug-000076",
+        "bug-000304",
+        "bug-000606"
+      ]
+    },
+    {
+      "id": "logic-error",
+      "label": "Logic Error",
+      "definition": "Incorrect decision-making or execution logic despite syntactically valid and executable code.",
+      "rules": [
+        "Use for flawed conditions, business rules, control flow, or execution order.",
+        "Avoid treating it as a catch-all when a more specific category applies."
+      ],
+      "neighbors": [
+        "type-error",
+        "api-misuse",
+        "missing-cases"
+      ],
+      "representativeRecordIds": [
+        "bug-000016",
+        "bug-000029",
+        "bug-000031",
+        "bug-000045",
+        "bug-000055",
+        "bug-000090"
+      ]
+    },
+    {
+      "id": "missing-cases",
+      "label": "Missing Cases",
+      "definition": "A relevant input, state, edge case, or scenario was not considered by existing behaviour.",
+      "rules": [
+        "The capability exists, but coverage of possible cases is incomplete.",
+        "Distinguish from Missing Features, where the capability itself is absent."
+      ],
+      "neighbors": [
+        "missing-features",
+        "api-misuse",
+        "test-fault"
+      ],
+      "representativeRecordIds": [
+        "bug-000002",
+        "bug-000006",
+        "bug-000007",
+        "bug-000041",
+        "bug-000046",
+        "bug-000058"
+      ]
+    },
+    {
+      "id": "missing-features",
+      "label": "Missing Features",
+      "definition": "An expected capability, operation, or behaviour was absent from the implementation.",
+      "rules": [
+        "Use when the fix adds a new capability rather than covering an edge case.",
+        "Check issue and PR context for expected behaviour."
+      ],
+      "neighbors": [
+        "missing-cases",
+        "ui-behavior-bug",
+        "logic-error"
+      ],
+      "representativeRecordIds": [
+        "bug-000057",
+        "bug-000088",
+        "bug-000096",
+        "bug-000141",
+        "bug-000160",
+        "bug-000163"
+      ]
+    },
+    {
+      "id": "runtime-exception",
+      "label": "Runtime Exception",
+      "definition": "A defect manifested as an uncaught runtime failure, crash, or invalid runtime state.",
+      "rules": [
+        "Use when the exception manifestation is the primary classification evidence.",
+        "Check priority rules before assigning a broader root-cause category."
+      ],
+      "neighbors": [
+        "exception-handling",
+        "missing-cases",
+        "type-error"
+      ],
+      "representativeRecordIds": [
+        "bug-000191",
+        "bug-000310",
+        "bug-000560",
+        "bug-000621",
+        "bug-000634"
+      ]
+    },
+    {
+      "id": "test-fault",
+      "label": "Test Fault",
+      "definition": "A defect in tests, test fixtures, test infrastructure, assertions, or test-specific logic.",
+      "rules": [
+        "The fault lies in test code or test setup rather than application behaviour.",
+        "Include broken or misleading tests and test-only tooling failures."
+      ],
+      "neighbors": [
+        "tooling-configuration-issue",
+        "missing-cases"
+      ],
+      "representativeRecordIds": [
+        "bug-000001",
+        "bug-000012",
+        "bug-000024",
+        "bug-000065",
+        "bug-000070",
+        "bug-000071"
+      ]
+    },
+    {
+      "id": "tooling-configuration-issue",
+      "label": "Tooling / Configuration Issue",
+      "definition": "Failures caused by build tools, configuration, packaging, dependencies, transpilation, CI/CD, or environment setup.",
+      "rules": [
+        "Prioritize concrete toolchain/configuration causes over surface symptoms.",
+        "Inspect package files, build scripts, lockfiles, CI files, and compiler settings."
+      ],
+      "neighbors": [
+        "ui-behavior-bug",
+        "api-misuse",
+        "test-fault"
+      ],
+      "representativeRecordIds": [
+        "bug-000003",
+        "bug-000004",
+        "bug-000005",
+        "bug-000009",
+        "bug-000010",
+        "bug-000011"
+      ]
+    },
+    {
+      "id": "type-error",
+      "label": "Type Error",
+      "definition": "Defects involving incorrect types, incompatible declarations, unsafe assumptions, or type-system/compiler signals.",
+      "rules": [
+        "Look for explicit type changes, compiler diagnostics, or declaration mismatches.",
+        "Distinguish runtime validation issues from static type faults."
+      ],
+      "neighbors": [
+        "logic-error",
+        "api-misuse",
+        "runtime-exception"
+      ],
+      "representativeRecordIds": [
+        "bug-000020",
+        "bug-000025",
+        "bug-000033",
+        "bug-000049",
+        "bug-000061",
+        "bug-000092"
+      ]
+    },
+    {
+      "id": "ui-behavior-bug",
+      "label": "UI Behavior Bug",
+      "definition": "Incorrect user-visible interface behaviour, rendering, interaction, or state presentation.",
+      "rules": [
+        "Use when the primary fault is observable UI behaviour and no higher-priority tooling cause applies.",
+        "Include rendering, layout, interaction, and state synchronization failures."
+      ],
+      "neighbors": [
+        "tooling-configuration-issue",
+        "missing-features",
+        "logic-error"
+      ],
+      "representativeRecordIds": [
+        "bug-000015",
+        "bug-000022",
+        "bug-000030",
+        "bug-000038",
+        "bug-000042",
+        "bug-000050"
+      ]
+    }
+  ],
+  "dependencyCategories": [
+    {
+      "id": "build-scripts-ci-cd-configuration",
+      "label": "Build Scripts & CI/CD Configuration"
+    },
+    {
+      "id": "dependency-package-management",
+      "label": "Dependency & Package Management"
+    },
+    {
+      "id": "compiler-build-target-configuration",
+      "label": "Compiler & Build Target Configuration"
+    },
+    {
+      "id": "external-tool-integration",
+      "label": "External Tool Integration"
+    },
+    {
+      "id": "platform-runtime-configuration",
+      "label": "Platform & Runtime Configuration"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "user-interface",
+    "label": "User interface"
+  },
+  {
+    "id": "app-logic-workflows",
+    "label": "Application logic and workflows"
+  },
+  {
+    "id": "education",
+    "label": "Education"
+  },
+  {
+    "id": "libraries-framework",
+    "label": "Libraries / Framework"
+  },
+  {
+    "id": "api-service-integration",
+    "label": "Integrating with APIs and services"
+  },
+  {
+    "id": "api-service-provider",
+    "label": "Providing APIs and service"
+  },
+  {
+    "id": "ai-integration",
+    "label": "Integration with AI"
+  },
+  {
+    "id": "automated-testing-qa",
+    "label": "Automating software testing and quality assurance"
+  }
+]

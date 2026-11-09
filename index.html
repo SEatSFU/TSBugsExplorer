@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TSBugs Explorer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>TSBugs Explorer</h1>
+      <p>Interactive visual analytics for a curated TypeScript bug benchmark</p>
+    </div>
+    <div class="top-actions">
+      <a class="secondary button-link" href="README.md" target="_blank">Guide</a>
+    </div>
+  </header>
+
+  <nav class="tabs" aria-label="Main views" inert>
+    <button class="tab active" data-view="dashboard">Dashboard</button>
+    <button class="tab" data-view="explorer">Bug Explorer</button>
+    <button class="tab" data-view="compare">Compare Projects</button>
+    <button class="tab" data-view="benchmark">Benchmark Builder</button>
+    <button class="tab" data-view="taxonomy">Taxonomy</button>
+  </nav>
+
+  <section id="dataStatus" class="panel data-status" role="status" aria-live="polite">
+    <p id="dataMessage">Loading benchmark data…</p>
+    <button id="retryLoad" class="secondary" hidden>Retry</button>
+  </section>
+
+  <main hidden>
+    <section id="dashboard" class="view active">
+      <div class="filter-strip">
+        <label>Project<select id="globalProject"><option value="">All projects</option></select></label>
+        <label>Bug type<select id="globalType"><option value="">All categories</option></select></label>
+        <label>Domain<select id="globalDomain"><option value="">All domains</option></select></label>
+        <label>Search<input id="globalSearch" type="search" placeholder="Bug ID, file path, project…" /></label>
+      </div>
+      <div class="filter-status" aria-label="Dashboard filter status">
+        <strong id="matchingCount" aria-live="polite"></strong>
+        <div id="activeFilters" class="active-filters"></div>
+        <button id="resetAll" class="secondary" disabled>Reset All Filters</button>
+      </div>
+      <div id="metricCards" class="metrics"></div>
+      <div class="grid two-col">
+        <article id="categoryPanel" class="panel category-panel">
+          <h2 id="categoryTitle">Bug Category Distribution</h2>
+          <div id="categoryMode" class="segmented" role="group" aria-label="Bug Category Distribution measure">
+            <button type="button" data-category-mode="count" aria-pressed="true">Sample Count</button>
+            <button type="button" data-category-mode="weighted" aria-pressed="false">Project-Weighted</button>
+          </div>
+          <p id="categoryDescription">Number of matching Bug samples</p>
+          <p id="categoryHelp" class="small-note" hidden>Calculate each category's share within each eligible project, then average those shares equally across projects.</p>
+          <div class="chart-filter-row">
+            <button id="categoryChip" class="filter-chip" hidden></button>
+          </div>
+          <div id="categoryChart" class="chart"></div>
+        </article>
+        <article id="projectPanel" class="panel">
+          <div class="panel-header"><div><h2>Project Coverage</h2><p>Bug Sample Count by repository.</p></div></div>
+          <div class="chart-filter-row"><button id="projectChip" class="filter-chip" hidden></button></div>
+          <div id="projectChart" class="chart"></div>
+        </article>
+      </div>
+      <article class="panel">
+        <div class="panel-header"><div><h2>Fault Landscape Heatmap</h2><p>Cell fill: Bug Sample Count. Click a cell to inspect that subset.</p></div>
+          <div class="heatmap-controls"><span>Cell Labels:</span><div id="heatmapLabels" class="segmented" role="group" aria-label="Heatmap cell labels">
+            <button data-heatmap-labels="none" aria-pressed="true">None</button>
+            <button data-heatmap-labels="project" aria-pressed="false">Within-Project %</button>
+          </div></div>
+        </div>
+        <div id="heatmapLegend" class="heatmap-legend" aria-label="Linear Bug Sample Count color legend"></div>
+        <p id="heatmapFocusState" class="small-note" aria-live="polite"></p>
+        <div id="heatmap" class="chart heatmap-wrap"></div>
+      </article>
+      <div class="grid two-col">
+        <article id="domainPanel" class="panel"><div class="panel-header"><div><h2>Domain Distribution</h2><p>Bug Sample Count by application domain.</p></div><button id="allDomains" class="secondary">All Domains</button></div><div class="chart-filter-row"><button id="domainChip" class="filter-chip" hidden></button></div><div id="domainChart" class="chart"></div></article>
+        <article class="panel"><div class="panel-header"><div><h2>Project characteristics</h2><p>Each point is a project; size encodes bug count.</p></div></div><div id="scatterChart" class="chart"></div></article>
+      </div>
+    </section>
+
+    <section id="explorer" class="view">
+      <div class="split-layout">
+        <aside class="sidebar panel">
+          <h2>Find bugs</h2>
+          <label>Search<input id="explorerSearch" type="search" placeholder="ID, file, category…" /></label>
+          <label>Project<select id="explorerProject"><option value="">All projects</option></select></label>
+          <label>Category<select id="explorerType"><option value="">All categories</option></select></label>
+          <label>Domain<select id="explorerDomain"><option value="">All domains</option></select></label>
+          <label>Minimum files changed<input id="minFiles" type="number" min="1" value="1" /></label>
+          <button id="clearExplorer" class="secondary full">Clear explorer filters</button>
+          <div class="small-note">Select a row to inspect provenance, changed files, project context, and related bugs.</div>
+        </aside>
+        <div class="content-stack">
+          <article class="panel">
+            <div class="panel-header"><div><h2>Bug records</h2><p id="bugTableSummary"></p></div><div><button id="downloadCurrentCsv" class="secondary">Export current view</button></div></div>
+            <div class="table-wrap"><table id="bugTable"><thead><tr><th>Bug</th><th>Project</th><th>Category</th><th>Domain</th><th>Files</th></tr></thead><tbody></tbody></table></div>
+            <div class="pager"><button id="prevPage" class="secondary">Previous</button><span id="pageInfo"></span><button id="nextPage" class="secondary">Next</button></div>
+          </article>
+          <article id="bugDetail" class="panel detail empty-state">Select a bug to view details.</article>
+        </div>
+      </div>
+    </section>
+
+    <section id="compare" class="view">
+      <div class="filter-strip compact">
+        <label>Project A<select id="projectA"></select></label>
+        <label>Project B<select id="projectB"></select></label>
+      </div>
+      <div id="comparisonCards" class="comparison-cards"></div>
+      <div class="grid two-col">
+        <article class="panel"><div class="panel-header"><div><h2>Fault profile comparison</h2><p>Normalized category percentages.</p></div></div><div id="compareBars" class="chart"></div></article>
+        <article class="panel"><div class="panel-header"><div><h2>Project metrics</h2><p>Relative project characteristics.</p></div></div><div id="metricCompare" class="chart"></div></article>
+      </div>
+      <article class="panel"><div class="panel-header"><div><h2>Dependency and tooling profile</h2><p>Dependency categories found in the uploaded dependency inventory.</p></div></div><div id="dependencyCompare" class="chart"></div></article>
+      <article id="differencePanel" class="panel"><div class="panel-header"><div><h2>Category Difference View</h2><p>Bug Category shares: A − B in percentage points (pp). Descriptive differences do not imply statistical significance.</p></div></div><div id="categoryDifference" class="chart"></div></article>
+    </section>
+
+    <section id="benchmark" class="view">
+      <div class="split-layout">
+        <aside class="sidebar panel">
+          <h2>Benchmark criteria</h2>
+          <fieldset class="benchmark-facet">
+            <legend>Projects</legend>
+            <label>Search projects<input type="search" /></label>
+            <div id="benchProjects" class="criterion-options" role="listbox" aria-label="Benchmark projects" aria-multiselectable="true"></div>
+            <p class="criterion-empty small-note" hidden>No matching items.</p>
+            <p class="selection-summary small-note" aria-live="polite"></p>
+            <div class="button-row"><button class="secondary" data-select-all>Select All</button><button class="secondary" data-clear>Clear</button></div>
+          </fieldset>
+          <fieldset class="benchmark-facet">
+            <legend>Bug Categories</legend>
+            <label>Search categories<input type="search" /></label>
+            <div id="benchTypes" class="criterion-options" role="listbox" aria-label="Benchmark categories" aria-multiselectable="true"></div>
+            <p class="criterion-empty small-note" hidden>No matching items.</p>
+            <p class="selection-summary small-note" aria-live="polite"></p>
+            <div class="button-row"><button class="secondary" data-select-all>Select All</button><button class="secondary" data-clear>Clear</button></div>
+          </fieldset>
+          <fieldset class="benchmark-facet">
+            <legend>Domains</legend>
+            <label>Search domains<input type="search" /></label>
+            <div id="benchDomains" class="criterion-options" role="listbox" aria-label="Benchmark domains" aria-multiselectable="true"></div>
+            <p class="criterion-empty small-note" hidden>No matching items.</p>
+            <p class="selection-summary small-note" aria-live="polite"></p>
+            <div class="button-row"><button class="secondary" data-select-all>Select All</button><button class="secondary" data-clear>Clear</button></div>
+          </fieldset>
+          <p class="small-note">Click to toggle; drag to add selections. All options start selected. Select All includes items hidden by list search. Clear deselects every option in its group; a group with no selections matches no Bug samples.</p>
+          <label>Minimum files changed<input id="benchMinFiles" type="number" min="1" value="1" /></label>
+          <div class="button-row"><button id="benchSelectAll" class="secondary">Select all</button><button id="benchClear" class="secondary">Clear</button></div>
+        </aside>
+        <div class="content-stack">
+          <div id="benchmarkMetrics" class="metrics"></div>
+          <div class="grid two-col">
+            <article class="panel"><div class="panel-header"><div><h2>Category balance</h2><p>Preview the benchmark before export.</p></div></div><div id="benchmarkCategory" class="chart"></div></article>
+            <article class="panel"><div class="panel-header"><div><h2>Repository balance</h2><p>Coverage across projects.</p></div></div><div id="benchmarkProject" class="chart"></div></article>
+          </div>
+          <article class="panel">
+            <div class="panel-header"><div><h2>Export benchmark</h2><p>Download the current subset with stable IDs and provenance URLs.</p></div></div>
+            <div class="export-row"><button id="exportCsv">Download CSV</button><button id="exportJson">Download JSON</button><button id="copySummary" class="secondary">Copy benchmark summary</button></div>
+            <pre id="benchmarkSummary"></pre>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="taxonomy" class="view">
+      <div class="taxonomy-layout">
+        <aside id="taxonomyList" class="taxonomy-list panel"></aside>
+        <article id="taxonomyDetail" class="panel taxonomy-detail"></article>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
