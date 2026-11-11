@@ -8166,20 +8166,5 @@
       "src/parser/loadSVGFromString.test.ts",
       "src/parser/normalizeValue.ts"
     ]
-  },
-  {
-    "recordId": "bug-000634",
-    "id": "edec141",
-    "projectId": "fabric.js",
-    "categoryId": "runtime-exception",
-    "link": "https://github.com/fabricjs/fabric.js/commit/edec141df0f1f14c4e70ba60509d6ad18433f8c9",
-    "filePaths": [
-      ".github/workflows/ci.yml",
-      "packages/engine.io-client/lib/transports/websocket.ts",
-      "packages/engine.io-client/package.json",
-      "packages/engine.io-client/test/connection.js",
-      "packages/engine.io-client/test/support/env.js",
-      "packages/engine.io-client/test/transport.js"
-    ]
   }
 ]
