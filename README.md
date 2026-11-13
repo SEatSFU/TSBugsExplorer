@@ -146,7 +146,7 @@ TSBugs Explorer transforms a TypeScript bug benchmark into an interactive visual
 
 ## License
 
-_To be added._
+TSBugs Explorer is released under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
