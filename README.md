@@ -150,6 +150,6 @@ TSBugs Explorer is released under the MIT License. See the [LICENSE](LICENSE) fi
 
 ---
 
-## Citation
+## Preprint
 
-_Citation information will be added following publication._
+A preprint of our paper, *TSBugs Explorer: Exploring and Benchmarking TypeScript Bugs*, is available on [arXiv](https://arxiv.org/pdf/2611.14940).
